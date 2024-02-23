@@ -15,17 +15,20 @@ Next, install the required Python packages. You can do this with the following c
 
 ```bash
 pip install subprocess datetime smtplib email.mime.multipart email.mime.text argparse ast os
+```
 
+USAGE
 
-Usage
 To run the script, use the following command:
-
-30
+```
+python act_script.py --domains "[('domain1', 443), ('domain2', 443)]" --sender_email "sender@example.com" --recipient_emails "['recipient1@example.com', 'recipient2@example.com']" --cc_recipients "['cc1@example.com', 'cc2@example.com']" --days 30
+```
 Replace the domain names, ports, email addresses, and number of days with your actual values.
 
 The --domains argument is a list of tuples, where each tuple contains a domain name and a port number. The --sender_email argument is the email address that will send the notifications. The --recipient_emails and --cc_recipients arguments are lists of email addresses that will receive the notifications. The --days argument is the number of days to expiry that will trigger a notification.
 
-Environment Variables
+ENVIRONMENT VARIABLES
+```
 The script uses the SENDER_EMAIL_PASSWORD environment variable for the sender email's password. Make sure to set this environment variable in your system before running the script.
 
 ```
